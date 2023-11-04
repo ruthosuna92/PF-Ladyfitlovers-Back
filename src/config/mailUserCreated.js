@@ -1,5 +1,5 @@
 const welcome = require("../helpers/mailUserCreatedHTML");
-const transporter = require("./transporter")
+const transporter = require("./nodemailer")
 const { EMAIL_USER } = process.env
 
 const mailUserCreated = async (email) => {
@@ -7,7 +7,7 @@ const mailUserCreated = async (email) => {
   await transporter.sendMail({
     from: `Lady Fit Lovers ${EMAIL_USER}`,
     to: email,
-    subject: "Bienvenido a Ladifitlovers",
+    subject: "Bienvenido",
     html: welcomeHtml
   })
 }
